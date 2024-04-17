@@ -1,4 +1,4 @@
-export default function handleResponseFromAPI(promise) {
+export default (promise) =>
 	promise
 		.then(() => {
 			return { status: 200, body: success };
@@ -7,4 +7,3 @@ export default function handleResponseFromAPI(promise) {
 			return new Error();
 		})
 		.finally(() => console.log("Got a response from the API"));
-}
