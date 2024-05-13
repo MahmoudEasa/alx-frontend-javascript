@@ -22,9 +22,9 @@ class Currency {
 		else throw new TypeError("Name most be a string");
 	}
 
-	displayFullCurrency() {
+	displayFullCurrency = () => {
 		return `${this._name} (${this._code})`;
-	}
+	};
 }
 
 export default Currency;
