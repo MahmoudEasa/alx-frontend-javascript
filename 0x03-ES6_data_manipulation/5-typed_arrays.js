@@ -5,7 +5,6 @@ export default (length, position, value) => {
 		view[position] = value;
 		return new DataView(buffer);
 	} catch (err) {
-		console.log(err);
 		throw new Error("Position outside range");
 	}
 };
