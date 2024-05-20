@@ -3,7 +3,7 @@ export default (set, startString) => {
 	if (!startLen) return "";
 	const result = [];
 	set.forEach((element) => {
-		if (element.startsWith(startString) && element.length > startLen)
+		if (element.length > startLen && element.startsWith(startString))
 			result.push(element.slice(startLen));
 	});
 	return result.join("-");
