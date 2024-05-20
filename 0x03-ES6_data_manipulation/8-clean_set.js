@@ -1,10 +1,12 @@
 export default (set, startString) => {
+	if (typeof startString !== "string") return "";
 	const startLen = startString.length;
 	if (!startLen) return "";
 	const result = [];
-	set.forEach((element) => {
-		if (element.length > startLen && element.startsWith(startString))
+	for (const element of set) {
+		if (typeof element !== "string") continue;
+		if (element.startsWith(startString))
 			result.push(element.slice(startLen));
-	});
+	}
 	return result.join("-");
 };
