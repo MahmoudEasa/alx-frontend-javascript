@@ -9,8 +9,8 @@ interface Teacher {
 const teacher3: Teacher = {
 	firstName: "Mahmoud",
 	fullTimeEmployee: false,
-	lastName: "Doe",
-	location: "London",
+	lastName: "Easa",
+	location: "Egypt",
 	contract: false,
 };
 
@@ -30,3 +30,12 @@ console.log(director1);
 
 console.log(teacher3);
 console.table(teacher3);
+
+interface printTeacherFunction {
+	(firstName: string, lastName: string): string;
+}
+
+const printTeacher: printTeacherFunction = (firstName, lastName) =>
+	`${firstName[0]}. ${lastName}`;
+
+console.log(printTeacher(teacher3.firstName, teacher3.lastName));
