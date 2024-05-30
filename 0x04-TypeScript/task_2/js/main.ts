@@ -43,9 +43,32 @@ const createEmployee: createEmployeeFunc = (salary) => {
 	return new Director();
 };
 
-console.log("createEmployee(200) ===> ");
+console.log("Teacher ===> ");
 console.log(createEmployee(200));
-console.log("createEmployee(1000) ===> ");
+console.log("Director ===> ");
 console.log(createEmployee(1000));
-console.log("createEmployee($500) ===> ");
+console.log("Director ===> ");
 console.log(createEmployee("$500"));
+
+interface isDirectorFunc {
+	(employee: Director | Teacher): boolean;
+}
+
+interface executeWorkFunc {
+	(employee: Director | Teacher): string;
+}
+
+const isDirector: isDirectorFunc = (employee) => {
+	if (employee instanceof Director) return true;
+	return false;
+};
+
+const executeWork: executeWorkFunc = (employee) => {
+	if (isDirector(employee)) return new Director().workDirectorTasks();
+	return new Teacher().workTeacherTasks();
+};
+
+console.log("Director ===> ");
+console.log(executeWork(createEmployee(1000)));
+console.log("Teacher ===> ");
+console.log(executeWork(createEmployee(200)));
