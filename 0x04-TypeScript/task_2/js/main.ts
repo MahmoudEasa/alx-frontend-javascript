@@ -75,7 +75,7 @@ console.log(executeWork(createEmployee(200)));
 
 type Subjects = "Math" | "History";
 
-const teachClass = (todayClass: Subjects) => `Teaching ${todayClass}`;
+const teachClass = (todayClass: Subjects): string => `Teaching ${todayClass}`;
 
 console.log(teachClass("Math"));
 console.log(teachClass("History"));
