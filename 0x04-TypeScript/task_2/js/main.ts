@@ -72,3 +72,10 @@ console.log("Director ===> ");
 console.log(executeWork(createEmployee(1000)));
 console.log("Teacher ===> ");
 console.log(executeWork(createEmployee(200)));
+
+type Subjects = "Math" | "History";
+
+const teachClass = (todayClass: Subjects) => `Teaching ${todayClass}`;
+
+console.log(teachClass("Math"));
+console.log(teachClass("History"));

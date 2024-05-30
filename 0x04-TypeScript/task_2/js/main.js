@@ -51,3 +51,6 @@ console.log("Director ===> ");
 console.log(executeWork(createEmployee(1000)));
 console.log("Teacher ===> ");
 console.log(executeWork(createEmployee(200)));
+var teachClass = function (todayClass) { return "Teaching ".concat(todayClass); };
+console.log(teachClass("Math"));
+console.log(teachClass("History"));
