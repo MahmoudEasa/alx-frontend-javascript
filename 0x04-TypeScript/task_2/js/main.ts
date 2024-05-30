@@ -1,25 +1,51 @@
-interface Student {
-	firstName: string;
-	lastName: string;
-	age: number;
-	location: string;
+interface DirectorInterface {
+	workFromHome: () => String;
+	getCoffeeBreak: () => String;
+	workDirectorTasks: () => String;
 }
 
-const student1: Student = {
-	firstName: "Mahmoud",
-	lastName: "Easa",
-	age: 34,
-	location: "Egypt",
+interface TeacherInterface {
+	workFromHome: () => String;
+	getCoffeeBreak: () => String;
+	workTeacherTasks: () => String;
+}
+
+class Director implements DirectorInterface {
+	workFromHome() {
+		return "Working from home";
+	}
+	getCoffeeBreak() {
+		return "Getting a coffee break";
+	}
+	workDirectorTasks() {
+		return "Getting to director tasks";
+	}
+}
+
+class Teacher implements TeacherInterface {
+	workFromHome() {
+		return "Cannot work from home";
+	}
+	getCoffeeBreak() {
+		return "Cannot have a break";
+	}
+	workTeacherTasks() {
+		return "Getting to work";
+	}
+}
+
+interface createEmployeeFunc {
+	(salary: Number | String): Director | Teacher;
+}
+
+const createEmployee: createEmployeeFunc = (salary) => {
+	if (typeof salary === "number" && salary < 500) return new Teacher();
+	return new Director();
 };
 
-const student2: Student = {
-	firstName: "Mahmoud2",
-	lastName: "Easa2",
-	age: 22,
-	location: "Egypt2",
-};
-
-const studentsList: Student[] = [student1, student2];
-
-console.table(studentsList, ["firstName", "location"]);
-console.table(studentsList);
+console.log("createEmployee(200) ===> ");
+console.log(createEmployee(200));
+console.log("createEmployee(1000) ===> ");
+console.log(createEmployee(1000));
+console.log("createEmployee($500) ===> ");
+console.log(createEmployee("$500"));
