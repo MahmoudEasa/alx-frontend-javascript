@@ -1,25 +1,13 @@
-interface Student {
-	firstName: string;
-	lastName: string;
-	age: number;
-	location: string;
-}
+/// <reference path="./crud.d.ts" />
+import { RowID, RowElement } from "./interface";
+import * as CRUD from "./crud.js";
 
-const student1: Student = {
-	firstName: "Mahmoud",
-	lastName: "Easa",
-	age: 34,
-	location: "Egypt",
+const row: RowElement = {
+	firstName: "Guillaume",
+	lastName: "Salva",
 };
 
-const student2: Student = {
-	firstName: "Mahmoud2",
-	lastName: "Easa2",
-	age: 22,
-	location: "Egypt2",
-};
-
-const studentsList: Student[] = [student1, student2];
-
-console.table(studentsList, ["firstName", "location"]);
-console.table(studentsList);
+const newRowId: RowID = CRUD.insertRow(row);
+const updatedRow: RowElement = { ...row, age: 23 };
+CRUD.updateRow(newRowId, updatedRow);
+CRUD.deleteRow(newRowId);
