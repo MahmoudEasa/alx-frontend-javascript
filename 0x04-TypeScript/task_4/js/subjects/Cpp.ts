@@ -18,3 +18,25 @@ namespace Subjects {
 		}
 	}
 }
+
+// const teacher = {
+// 	firstName: "Mahmoud",
+// 	lastName: "Easa",
+// 	experienceTeachingC: 10,
+// };
+
+// const cpp = new Subjects.Cpp(teacher);
+// const react = new Subjects.React(teacher);
+// const java = new Subjects.Java(teacher);
+
+// console.log("========= Cpp ==========");
+// console.log(cpp.getRequirements());
+// console.log(cpp.getAvailableTeacher());
+
+// console.log("========= React ==========");
+// console.log(react.getRequirements());
+// console.log(react.getAvailableTeacher());
+
+// console.log("========= Java ==========");
+// console.log(java.getRequirements());
+// console.log(java.getAvailableTeacher());
