@@ -1,25 +1,28 @@
-interface Student {
-	firstName: string;
-	lastName: string;
-	age: number;
-	location: string;
+interface MajorCredits {
+	brand: string;
+	credits: number;
 }
 
-const student1: Student = {
-	firstName: "Mahmoud",
-	lastName: "Easa",
-	age: 34,
-	location: "Egypt",
+interface MinorCredits {
+	brand: string;
+	credits: number;
+}
+
+const sumMajorCredits = (subject1: MajorCredits, subject2: MajorCredits) => {
+	subject1.credits += subject2.credits;
+	return subject1;
 };
 
-const student2: Student = {
-	firstName: "Mahmoud2",
-	lastName: "Easa2",
-	age: 22,
-	location: "Egypt2",
+const sumMinorCredits = (subject1: MinorCredits, subject2: MinorCredits) => {
+	subject1.credits += subject2.credits;
+	return subject1;
 };
 
-const studentsList: Student[] = [student1, student2];
+const major1: MajorCredits = { credits: 3, brand: "major" };
+const major2: MajorCredits = { credits: 4, brand: "major" };
 
-console.table(studentsList, ["firstName", "location"]);
-console.table(studentsList);
+const minor1: MinorCredits = { credits: 2, brand: "minor" };
+const minor2: MinorCredits = { credits: 1, brand: "minor" };
+
+console.log(sumMajorCredits(major1, major2));
+console.log(sumMinorCredits(minor1, minor2));
